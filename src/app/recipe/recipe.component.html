@@ -1,0 +1,41 @@
+<div class="container mt-4">
+    <h2 class="text-center mb-4" style="color: #e74c3c; font-family: 'Arial', sans-serif; font-size: 2.5rem;">My Restaurant Recipes</h2>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="card mb-4" style="background-color: #f5b7b1; border-color: #e74c3c;">
+          <div class="card-body">
+            <h3 class="card-title text-center" style="color: #e74c3c; font-family: 'Arial', sans-serif; font-size: 1.5rem;">Add a New Recipe</h3>
+            <div class="input-group mb-3">
+              <input type="text" class="form-control" placeholder="Recipe Name" [(ngModel)]="newRecipeName" />
+              <div class="input-group-append">
+                <button class="btn btn-danger" type="button" (click)="addRecipe()">Add</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div *ngFor="let recipe of recipes; let i = index">
+          <div class="card mb-3" style="background-color: #f5b7b1; border-color: #e74c3c;">
+            <div class="card-body">
+              <h3 class="card-title" style="color: #e74c3c; font-family: 'Arial', sans-serif; font-size: 1.5rem;">{{ recipe.name }}</h3>
+              <ul class="list-group">
+                <li *ngFor="let ingredient of recipe.ingredients; let j = index" class="list-group-item" style="background-color: #f9e79f; border-color: #f4d03f;">
+                  {{ ingredient }}
+                  <button type="button" class="btn btn-warning float-right" (click)="deleteIngredient(recipe, j)">Delete</button>
+                </li>
+              </ul>
+              <div class="input-group mt-3">
+                <input type="text" class="form-control" placeholder="Add Ingredient" [(ngModel)]="newIngredient" />
+                <div class="input-group-append">
+                  <button type="button" class="btn btn-danger" (click)="addIngredient(recipe)">Add</button>
+                </div>
+              </div>
+              <button type="button" class="btn btn-warning mt-2" (click)="clearIngredients(recipe)">Clear Ingredients</button>
+              <button type="button" class="btn btn-danger float-right" (click)="deleteRecipe(i)">Delete Recipe</button>
+            </div>
+          </div>
+        </div>
+        <button type="button" class="btn btn-danger" (click)="clearRecipes()">Clear All Recipes</button>
+      </div>
+    </div>
+  </div>
+  

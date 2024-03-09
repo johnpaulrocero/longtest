@@ -1,0 +1,32 @@
+/* recipe.component.css */
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  }
+  
+  .list-group-item {
+    background-color: #f9e79f; /* Yellow list item background color */
+    border-color: #f4d03f; /* Yellow list item border color */
+    font-family: 'Arial', sans-serif;
+    font-size: 1.2rem;
+  }
+  
+  .btn-danger {
+    background-color: #e74c3c; /* Red button background color */
+    border-color: #c0392b; /* Red button border color */
+    color: #fff; /* White button text color */
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .btn-warning {
+    background-color: #f39c12; /* Orange button background color */
+    border-color: #d68910; /* Orange button border color */
+    color: #fff; /* White button text color */
+    font-family: 'Arial', sans-serif;
+  }
+  
